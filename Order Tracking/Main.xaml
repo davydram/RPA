@@ -1,0 +1,413 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.In_servidorcorreto="FKTPWVA69.FURUKAWA.CORP" this:Main.AssetRemoteWindows="Remote_Local" this:Main.AssetExportSys="Login_ExportSys" this:Main.mail="davyd.ramos@furukawaelectric.com" this:Main.mailto="davyd.ramos@furukawaelectric.com" this:Main.tracking_user="furukawa_upld_test" this:Main.tracking_credencial="6KyRAYPSdvVh" this:Main.in_copia="davyd.ramos@furukawaelectric.com" this:Main.pasta_rede="\\Frkpwcyd03a\FS_FEL\Logistica\CCI\FLI\VIEW EXPORTSYS" this:Main.relatorio_nome_export="Relatório de Embarques" this:Main.servidor_remoto="FKTPWVA69.FURUKAWA.CORP" this:Main.in_pasta_rede_destino="\\frkfs01\multimidia\BIG DATA\Outras Fontes\Exportação\Dias de Embarque\input" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_servidorcorreto" Type="InArgument(x:String)" />
+    <x:Property Name="AssetRemoteWindows" Type="InArgument(x:String)" />
+    <x:Property Name="AssetExportSys" Type="InArgument(x:String)" />
+    <x:Property Name="mail" Type="InArgument(x:String)" />
+    <x:Property Name="mailto" Type="InArgument(x:String)" />
+    <x:Property Name="tracking_user" Type="InArgument(x:String)" />
+    <x:Property Name="tracking_credencial" Type="InArgument(x:String)" />
+    <x:Property Name="Pasta_Asset" Type="InArgument(x:String)" />
+    <x:Property Name="in_copia" Type="InArgument(x:String)" />
+    <x:Property Name="pasta_rede" Type="InArgument(x:String)" />
+    <x:Property Name="relatorio_nome_export" Type="InArgument(x:String)" />
+    <x:Property Name="servidor_remoto" Type="InArgument(x:String)" />
+    <x:Property Name="in_pasta_rede_destino" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.Pasta_Asset>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.Pasta_Asset>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1024,1553.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="52">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="50">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap:VirtualizedContainerService.HintSize="740,1515.2" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="arquivo" />
+      <Variable x:TypeArguments="sd:DataTable" Name="arquivoemail" />
+      <Variable x:TypeArguments="sd:DataTable" Name="arquivo_ftp" />
+      <Variable x:TypeArguments="x:String" Name="arquivo_nome" />
+      <Variable x:TypeArguments="x:Int32" Name="contador" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_export_raiz" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <av:Point x:Key="ShapeLocation">290,2.4</av:Point>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">320,77.6 320,123.6</av:PointCollection>
+        <x:Double x:Key="Height">1478.3999999999999</x:Double>
+        <x:Double x:Key="Width">706.4</x:Double>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <x:Reference>__ReferenceID10</x:Reference>
+    </Flowchart.StartNode>
+    <FlowStep x:Name="__ReferenceID4">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">220,403.6</av:Point>
+          <av:Size x:Key="ShapeSize">200,128.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">320,532.4 320,602.4</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Serie de atividades para garantir que estamos trabalhando com o arquívo válido." DisplayName="Leitura Copia e Criação de Pastas Ultimo Arquivo" sap:VirtualizedContainerService.HintSize="200,128.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Ler o Ultimo Arquivo.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_ultimoArquivoModificado">[arquivo]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="out_arquivo_nome">[arquivo_nome]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="pasta_rede">[pasta_rede]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">220,602.4</av:Point>
+              <av:Size x:Key="ShapeSize">200,112.8</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">320,715.2 320,793.6</av:PointCollection>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filtrar linhas com pendencias;&#xD;&#xA;Outros relatorios nao filtra&#xA;" DisplayName="Filtrar Excel" sap:VirtualizedContainerService.HintSize="200,112.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mover e Filtrar Excel.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="in_arquivo">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="arquivo" />
+              </InArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_arquivoemail">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="arquivoemail" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="x:Int32" x:Key="out_contador">
+                <mva:VisualBasicReference x:TypeArguments="x:Int32" ExpressionText="contador" />
+              </OutArgument>
+              <OutArgument x:TypeArguments="sd:DataTable" x:Key="dt_export_raiz">
+                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_export_raiz" />
+              </OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_relatorio_export">
+                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="relatorio_nome_export" />
+              </InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:InvokeWorkflowFile>
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <av:Point x:Key="ShapeLocation">220,793.6</av:Point>
+                  <av:Size x:Key="ShapeSize">200,96.8</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">320,890.4 320,926.4</av:PointCollection>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Envia o Email com as pendencias (cara triste e feliz)" DisplayName="Enviar Email Pendencias Verificar" sap:VirtualizedContainerService.HintSize="200,96.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Enviar Pendencias por Email.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_arquivoemail">
+                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="arquivoemail" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_destinatarios">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mailto" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_contaemail">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="mail" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_contador">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="contador" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_copia">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_copia" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_nome_relatorio">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="relatorio_nome_export" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <FlowStep.Next>
+                <FlowDecision x:Name="__ReferenceID6" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                  <FlowDecision.Condition>
+                    <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="relatorio_nome_export = &quot;Order Tracking&quot;" />
+                  </FlowDecision.Condition>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <av:Point x:Key="ShapeLocation">280.4,926.4</av:Point>
+                      <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                      <av:PointCollection x:Key="TrueConnector">280.4,970 180,970 180,1142.8 210,1142.8</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">359.6,970 610.241666666667,970 610.241666666667,996.5</av:PointCollection>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <FlowDecision.True>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <av:Point x:Key="ShapeLocation">210,1070.4</av:Point>
+                          <av:Size x:Key="ShapeSize">200,144.8</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">310,1215.2 310,1283.6</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Envia o email com o anexo no padrao do Order Tracking e salva no FTP que este sistema faz a leitura.&#xA;" DisplayName="Enviar Email OT e Salvar FTP" sap:VirtualizedContainerService.HintSize="200,144.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Mover e Excluir Colunas Excel.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_arquivo">[arquivo]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="out_arquivo_ftp">[arquivo_ftp]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_nome_arquivo">[arquivo_nome]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_senhaftp">[tracking_credencial]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_userftp">[tracking_user]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_destinatatarios_bkp">[mailto]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_contaemail_bkp">[mail]</InArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="dt_export_raiz">[dt_export_raiz]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_copia">[in_copia]</InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <FlowStep.Next>
+                        <FlowStep x:Name="__ReferenceID0">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">210,1283.6</av:Point>
+                              <av:Size x:Key="ShapeSize">200,128.8</av:Size>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Fará a limpeza das pastas temp do projeto e kill process de tudo que o robo utiliza" DisplayName="Limpeza e Kill" sap:VirtualizedContainerService.HintSize="200,128.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Limpar Pastas.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                        </FlowStep>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowDecision.True>
+                  <FlowDecision.False>
+                    <FlowDecision x:Name="__ReferenceID7" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+                      <FlowDecision.Condition>
+                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="relatorio_nome_export = &quot;Relatório de Embarques&quot;" />
+                      </FlowDecision.Condition>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">570.641666666667,996.5</av:Point>
+                          <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                          <av:PointCollection x:Key="TrueConnector">570.641666666667,1040.1 540,1040.1 540,1133.6</av:PointCollection>
+                          <av:PointCollection x:Key="FalseConnector">649.841666666667,1040.1 679.841666666667,1040.1 679.841666666667,1348 410,1348</av:PointCollection>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID8">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">440,1133.6</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">540,1186.4 540,1221.6</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:CopyFile ContinueOnError="{x:Null}" Destination="[in_pasta_rede_destino]" DisplayName="Copy File" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="CopyFile_1" Overwrite="True" Path="[Environment.CurrentDirectory.ToString +&quot;\dtSaidaRelatorio\RelatoriodeEmbarquesMes.xls&quot;]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CopyFile>
+                          <FlowStep.Next>
+                            <FlowStep x:Name="__ReferenceID9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">440,1221.6</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,96.8</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">540,1318.4 540,1348 410,1348</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Envia o Email com as pendencias (cara triste e feliz)" DisplayName="Enviar Email Pendencias Verificar" sap:VirtualizedContainerService.HintSize="200,96.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Enviar Pendencias por Email.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_arquivoemail">[arquivoemail]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_destinatarios">[mailto]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_contaemail">[mail]</InArgument>
+                                  <InArgument x:TypeArguments="x:Int32" x:Key="in_contador">[contador]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_copia">[in_copia]</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_nome_relatorio">[relatorio_nome_export]</InArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                              <FlowStep.Next>
+                                <x:Reference>__ReferenceID0</x:Reference>
+                              </FlowStep.Next>
+                            </FlowStep>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <x:Reference>__ReferenceID0</x:Reference>
+                      </FlowDecision.False>
+                    </FlowDecision>
+                  </FlowDecision.False>
+                </FlowDecision>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <FlowStep x:Name="__ReferenceID5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">220,263.6</av:Point>
+          <av:Size x:Key="ShapeSize">200,96.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">320,360.4 320,403.6</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Inicia o Processo de acessar o Softway no Servidor69" DisplayName="Acesso Remoto Softway (Servidor 69)" sap:VirtualizedContainerService.HintSize="200,96.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Acesso Remoto - Direto - PRD.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="in_servidor">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="servidor_remoto" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_assetRemote">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AssetRemoteWindows" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_assetExport">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AssetExportSys" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_pasta_asset">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Pasta_Asset" />
+          </InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="in_relatorio_tracking_nome">
+            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="relatorio_nome_export" />
+          </InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID4</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <FlowStep x:Name="__ReferenceID10">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">220,123.6</av:Point>
+          <av:Size x:Key="ShapeSize">200,96.8</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">320,220.4 320,263.6</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Inicia o processo limpando as pastas da rede" DisplayName="Limpar Pastas Rede" sap:VirtualizedContainerService.HintSize="200,96.8" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Limpar Pastas Rede.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="pasta_rede">[pasta_rede]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID5</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <x:Reference>__ReferenceID9</x:Reference>
+  </Flowchart>
+</Activity>
